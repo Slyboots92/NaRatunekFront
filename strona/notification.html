@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard do aplikacji</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/main.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+<!--            <li><a href="index.html">Podsumowanie <span class="sr-only">(current)</span></a></li>-->
+            <li><a href="donors.html">Darczyńcy</a></li>
+                
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Powiadomienia
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="notification.html">Notyfikacje</a></li>
+                    <li><a href="messenge.html">Wiadomości</a></li>
+                </ul>
+            </li>
+            </li>
+
+          </ul>
+        </div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Notifikacje</h1>
+        </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h2 class="sub-header">Wyślij powiadomienie do wszystkich</h2>
+            <div class="form-group">
+                <input id="tokenfield" type="text" class="form-control" placeholder="Temat" />
+            <textarea class="form-control short-notification" placeholder="Wiadomość"></textarea>
+            <div class="btn-send">
+            <button class="btn btn-success btn-lg">Wyślij</button>
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h2 class="sub-header">Wysłane wiadomości</h2>
+            
+            <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Temat</th>
+                  <th>Treść wiadomości</th>
+                  <th>Data</th>
+                  <th>Wyślij ponownie</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <th>Darmowa kawa</th>
+                  <th>Dla wszystkich którzy dzisiaj wezmą udział w wyzwaniu kawa w Macu gratis</th>
+                  <th>10/12/2017</th>
+                  <th><button class="btn btn-success btn-sm btn-resend">Wyślij</button></th>
+                <tr>
+                  <th>2</th>
+                  <th>Zawodowi trzepacze</th>
+                  <th>Dla każdego który dzisiaj wytrzepie dywan 10 punktów gratis</th>
+                  <th>09/09/2017</th>
+                  <th><button class="btn btn-success btn-sm btn-resend">Wyślij</button></th>
+                <tr>
+                  <th>3</th>
+                  <th>Kumulacja wyzwań</th>
+                  <th>Każdy kto dzisiaj wezwie udział w wyzwaniu dostanie 2x więcej punktów</th>
+                  <th>07/06/2017</th>
+                  <th><button class="btn btn-success btn-sm btn-resend">Wyślij</button></th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            
+        </div>
+        </div>
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
