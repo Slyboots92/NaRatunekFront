@@ -1,0 +1,24 @@
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr >
+        <th>ID</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Wpłacona kwota (zł)</th>
+        <th>Profil</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let donor of donors">
+        <td>{{donor.id}}</td>
+        <td>{{donor.name}}</td>
+        <td>{{donor.surname}}</td>
+        <td>{{donor.donationSum}}</td>
+        
+          <th><a href="{{donor.profileUrl}}">Dostępny</a></th>
+      </tr>
+      
+    </tbody> 
+  </table>
+</div>
