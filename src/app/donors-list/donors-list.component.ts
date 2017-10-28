@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Donor } from '../donor';
+import {Donor} from '../donor'
+import { AngularFireModule} from 'angularfire2';
+import { AuthService } from '../auth.service';
+import { DonorsServiceService } from '../donors-service.service';
+import { RootObject } from '../donors';
 @Component({
   selector: 'app-donors-list',
   templateUrl: './donors-list.component.html',
@@ -7,31 +11,31 @@ import { Donor } from '../donor';
 })
 export class DonorsListComponent implements OnInit {
 
-  
-  donors: Donor []; 
-  constructor() { 
-    this.donors=[];
-    let donor1=new Donor({
-      id:1,
-      name:'mariusz',
-      surname:'wasilewski',
-      email:'test1@test.pl',
-      donationSum: 2000,
-      profileUrl: 'www.wp.pl'
-    });
-    let donor2= new Donor({
-      id:2,
-      name:'mariusz',
-      surname:'kawa',
-      email:'test1@test.pl',
-      donationSum: 3000,
-      profileUrl: 'www.wp.pl'
-    })
-    this.donors.push(donor1);
-    this.donors.push(donor2);
+  email:string;
+  password:string;
+  donors: RootObject []; 
+  constructor(public authService: AuthService,public donorService: DonorsServiceService) {
+    this.email="admin@gmail.com";
+    this.password="admin1"
+     
   }
 
   ngOnInit() {
+    this.donorService.getDonors().subscribe(
+      (donors) => {
+        this.donors = donors;
+      }
+    )
+  }
+  test(){
+    this.donorService.getDonors().subscribe(
+      (donors) => {
+        this.donors = donors;
+      }
+    )
+  }
+  login(){
+    this.authService.login("admin@gmail.com","admin1")
   }
 
 }

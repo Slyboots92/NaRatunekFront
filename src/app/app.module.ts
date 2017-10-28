@@ -11,15 +11,16 @@ import { HttpModule } from '@angular/http';
 import {AuthService } from './auth.service'
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
+import {DonorsServiceService} from './donors-service.service'
 
 // Must export the config
 export const firebaseConfig = {
-  apiKey: '<your-key>',
-  authDomain: '<your-project-authdomain>',
-  databaseURL: '<your-database-URL>',
-  storageBucket: '<your-storage-bucket>',
-  messagingSenderId: '<your-messaging-sender-id>'
+  apiKey: "AIzaSyAz1XQG-AG4nGBXYOTQn2v5E8rosmihSR4",
+  authDomain: "hopeit-backend.firebaseapp.com",
+  databaseURL: "https://hopeit-backend.firebaseio.com",
+  projectId: "hopeit-backend",
+  storageBucket: "hopeit-backend.appspot.com",
+  messagingSenderId: "98752340717"
 };
 
 
@@ -38,7 +39,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,DonorsServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

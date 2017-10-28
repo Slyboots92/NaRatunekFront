@@ -8,11 +8,18 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
-
+  idTokenKey: string;
   constructor(private firebaseAuth: AngularFireAuth) {
     this.user = firebaseAuth.authState;
+    this.firebaseAuth.idToken.subscribe(value => {
+    this.idTokenKey=value;
+    console.log(this.idTokenKey);
+    })
   }
 
+  public getToken(){
+    return this.idTokenKey;
+  }
   signup(email: string, password: string) {
     this.firebaseAuth
       .auth

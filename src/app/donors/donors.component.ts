@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Donor} from '../donor'
 import { AngularFireModule} from 'angularfire2';
 import { AuthService } from '../auth.service';
+import { DonorsServiceService } from '../donors-service.service';
 @Component({
   selector: 'app-donors',
   templateUrl: './donors.component.html',
@@ -11,14 +12,15 @@ export class DonorsComponent implements OnInit {
 
 
   ngOnInit() {
-    this.login();
+    
   }
   email: string;
   password: string;
 
-  constructor(public authService: AuthService) {
-    this.email="test1@test.pl";
-    this.password="test1234"
+  constructor(public authService: AuthService,public donorService: DonorsServiceService) {
+    this.email="admin@gmail.com";
+    this.password="admin1"
+
   }
 
   signup() {
@@ -34,4 +36,6 @@ export class DonorsComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
+
+ 
 }
