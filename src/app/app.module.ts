@@ -6,9 +6,11 @@ import { DonorsHeaderComponent } from './donors-header/donors-header.component';
 import { DonorsComponent } from './donors/donors.component';
 import { DonorsListComponent } from './donors-list/donors-list.component';
 import { DonorsListItemComponent } from './donors-list-item/donors-list-item.component';
-import { ApiService } from './api.service';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {AuthService } from './auth.service'
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 // Must export the config
@@ -33,9 +35,10 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
-  providers: [ApiService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
